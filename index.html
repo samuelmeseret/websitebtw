@@ -94,6 +94,7 @@
                 <div class="card-face card-back" id="card-back"></div>
             </div>
         </div>
+        <p id="progress">Card 1 of 17</p>
     </div>
 
     <script>
@@ -120,10 +121,12 @@
         const card = document.getElementById('card');
         const front = document.getElementById('card-front');
         const back = document.getElementById('card-back');
+        const progress = document.getElementById('progress');
 
         function showCard(index) {
             front.textContent = flashcards[index].front;
             back.textContent = flashcards[index].back;
+            progress.textContent = `Card ${index + 1} of ${flashcards.length}`;
         }
 
         card.addEventListener('click', () => {
